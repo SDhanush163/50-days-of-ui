@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    background: linear-gradient(to bottom right, #97c25e, #007d7f);
+    background-attachment: fixed;
+}
+
+.wrapper {
+    position: absolute;
+    width: 900px;
+    height: 463px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+
+.frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 8px 14px 69px -19px #2f4858;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.backdrop {
+    position: absolute;
+    bottom: 0px;
+    transition: 1s;
+}
+
+.foreground {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    transition: 1s;
+}
+.pokemon {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    transition: 1s;
+}
+
+.pokemon_001 {
+    height: 150px;
+    bottom: 100px;
+    left: 300px;
+}
+
+.pokemon_002 {
+    height: 150px;
+    bottom: 100px;
+    left: 450px;
+}
+
+.pokemon_003 {
+    height: 150px;
+    bottom: 100px;
+    left: 600px;
+}
+
+.wrapper:hover .frame {
+    background-position: -10% 0%;
+    transform: rotateY(5deg);
+    box-shadow: 18px 24px 12px -19px #2f4858, -18px 24px 69px -19px #2f4858;
+}
+
+.wrapper:hover .backdrop {
+    transform: translateX(-20px) rotateY(5deg);
+}
+
+.wrapper:hover .foreground {
+    transform: translateX(20px) translateY(-15px) rotateY(8deg) scale(1.1);
+}
+
+.wrapper:hover .pokemon_001 {
+    transform: translateX(10px) rotateY(6deg) scale(1.03);
+}
+
+.wrapper:hover .pokemon_002 {
+    transform: translateX(14px) rotateY(5deg);
+}
+
+.wrapper:hover .pokemon_003 {
+    transform: translateX(20px) rotateY(4deg) scale(0.97);
+}
