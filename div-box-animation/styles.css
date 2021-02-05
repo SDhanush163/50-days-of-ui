@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #07003a;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background: #070030;
+    box-shadow: 10px 26px 180px -31px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 48%;
+    height: 96%;
+    background-color: #002e673f;
+}
+
+.box p {
+    color: #005990;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+.box h1 {
+    position: absolute;
+    right: 6%;
+    top: 6%;
+    font-size: 4em;
+    color: #03e9f4;
+}
+
+.btn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    color: #03e9f4;
+}
+
+.btn:hover {
+    background: #03e9f4;
+    color: #070030;
+    transition: 0.5s;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+}
+
+.box span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #002f67, #03e9f4);
+    animation: animate-1 2s linear infinite;
+}
+
+.box span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #002f67, #03e9f4);
+    animation: animate-2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+.box span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, #002f67, #03e9f4);
+    animation: animate-3 2s linear infinite;
+}
+
+.box span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, #002f67, #03e9f4);
+    animation: animate-4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate-1 {
+    0% {
+        transform: translate(-100%);
+    }
+    100% {
+        transform: translate(100%);
+    }
+}
+@keyframes animate-2 {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+@keyframes animate-3 {
+    0% {
+        transform: translate(100%);
+    }
+    100% {
+        transform: translate(-100%);
+    }
+}
+@keyframes animate-4 {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
