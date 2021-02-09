@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #19192e;
+}
+
+section h1 {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 10;
+    font-size: 4rem;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 5px 15px 15px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+section::before,
+section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(#ff4f4f, #ff4b9c);
+    z-index: 0;
+}
+
+section::before {
+    bottom: -40%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    animation: animate-sphere-1 4s infinite;
+}
+
+section::after {
+    top: 10%;
+    left: 10%;
+    width: 400px;
+    height: 400px;
+    animation: animate-sphere-2 4s infinite;
+}
+
+@keyframes animate-sphere-1 {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-20px) translateY(-80px) rotateZ(50deg);
+    }
+}
+
+@keyframes animate-sphere-2 {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100px) translateY(40px) rotateZ(-60deg);
+    }
+}
+
+.card {
+    position: relative;
+    width: 500px;
+    height: 325px;
+    margin: 10px;
+    z-index: 1;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.card .face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+
+.card:hover .face.front {
+    transform: rotateY(180deg);
+}
+
+.card .face.back {
+    transform: rotateY(180deg);
+}
+
+.card:hover .face.back {
+    transform: rotateY(360deg);
+}
+
+.card .face.front .card-type {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.card .face.front .bank-name {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 28px;
+}
+
+.card .face.front .chip {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    max-width: 64px;
+}
+
+.card .face.front .number {
+    position: absolute;
+    bottom: 120px;
+    left: 40px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-size: 24px;
+    font-family: "Inconsolata", monospace;
+}
+
+.card .face.front .valid-from,
+.card .face.front .valid-thru {
+    position: absolute;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    line-height: 0.85em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card .face.front .valid-from {
+    bottom: 80px;
+    left: 40px;
+}
+
+.card .face.front .valid-thru {
+    bottom: 80px;
+    left: 150px;
+}
+
+.card .face.front .valid-from span:nth-child(1),
+.card .face.front .valid-thru span:nth-child(1) {
+    font-size: 10px;
+}
+
+.card .face.front .valid-from span:nth-child(2),
+.card .face.front .valid-thru span:nth-child(2) {
+    font-size: 20px;
+    margin-left: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: "Inconsolata", monospace;
+}
+
+.card .face.front .card-holder {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.card .face.front .card-symbol {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    max-width: 100px;
+}
+
+.card .face.back .black-bar {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+
+.card .face.back .cvv-text {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+}
+
+.card .face.back .cvv-text h5 {
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.card .face.back .cvv-text .white-bar {
+    position: relative;
+    width: 400px;
+    height: 40px;
+    background: white;
+}
+
+.card .face.back .cvv-text .cvv {
+    position: relative;
+    top: -35px;
+    left: 395px;
+    background: lightgray;
+    width: 50px;
+    height: 30px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .face.back .text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    font-size: 10px;
+    color: white;
+    text-align: justify;
+}
