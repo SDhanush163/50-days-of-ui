@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    background: black;
+}
+
+.container {
+    position: relative;
+    margin: 150px auto 0;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(to top right, #000, #2a2a2a);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(
+        45deg,
+        #9400d3,
+        #4b0082,
+        #0000ff,
+        #00ff00,
+        #ffff00,
+        #ff7f00,
+        #ff0000,
+        #9400d3,
+        #4b0082,
+        #0000ff,
+        #00ff00,
+        #ffff00,
+        #ff7f00,
+        #ff0000
+    );
+    border-radius: 50%;
+    background-size: 800%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 60s linear infinite;
+}
+
+.container::after {
+    filter: blur(20px);
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 800% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.container h1 {
+    text-transform: uppercase;
+    background: linear-gradient(
+        to top right,
+        #9400d3,
+        #4b0082,
+        #0000ff,
+        #00ff00,
+        #ffff00,
+        #ff7f00,
+        #ff0000
+    );
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 100px;
+    padding: 0 100px;
+    box-shadow: 0 0 70px #000;
+}
