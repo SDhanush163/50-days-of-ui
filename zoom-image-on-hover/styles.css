@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Pacifico", cursive;
+}
+
+body {
+    background: #e0e0e0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.box {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border-radius: 50px;
+    box-shadow: 41px 41px 69px #9d9d9d, -41px -41px 69px #ffffff;
+    margin: 40px 0 30px 15%;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+    margin: 40px 15% 30px 0;
+}
+
+.cover {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.bg-1 {
+    background: url("images/forest.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-2 {
+    background: url("images/mountain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-3 {
+    background: url("images/desert.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg-4 {
+    background: url("images/beach.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a {
+    display: none;
+    font-size: 35px;
+    color: #ffffff !important;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.box:hover .cover,
+.box:focus .cover {
+    transform: scale(1.2);
+}
+
+.box:hover .cover:before,
+.box:focus .cover:before {
+    display: block;
+}
+
+.box:hover a,
+.box:focus a {
+    display: block;
+}
