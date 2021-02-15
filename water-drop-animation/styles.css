@@ -29,8 +29,8 @@ body::before {
     bottom: -600px;
     right: -600px;
     z-index: -1;
-    width: 1400px;
-    height: 1400px;
+    width: 1200px;
+    height: 1200px;
     border-radius: 50%;
     background: linear-gradient(to bottom right, aquamarine, teal);
 }
@@ -108,9 +108,9 @@ body::before {
 
 .content {
     position: absolute;
-    bottom: 33%;
+    bottom: 20%;
     right: 25%;
-    width: 30%;
+    width: 600px;
 }
 
 .content h1 {
@@ -151,7 +151,7 @@ body::before {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     position: absolute;
-    bottom: 33%;
+    bottom: 20%;
     right: 10%;
     overflow: hidden;
 }
