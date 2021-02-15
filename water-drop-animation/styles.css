@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    background: #f1f2f4;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    background: url("images/background.jpg");
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.blob span {
+    position: absolute;
+    bottom: -600px;
+    right: -600px;
+    z-index: -1;
+    width: 1400px;
+    height: 1400px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, aquamarine, teal);
+}
+
+.drop-1 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    animation: ripple 4s ease-in infinite;
+}
+
+.drop-2 {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    animation: ripple 4s ease-in infinite;
+    animation-delay: -3s;
+}
+
+.drop-3 {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 4s ease-in infinite;
+    animation-delay: -1.5s;
+}
+
+.wave {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    border: 26px solid #f1f2f4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 6px 6px 18px 0 #3754aa33, 6px 6px 18px 0 #3754aa33 inset,
+        -6px -6px 18px white, -6px -6px 18px white inset,
+        6px 6px 13px white inset;
+    filter: blur(13px);
+}
+
+.wave-2 {
+    width: 150%;
+    height: 150%;
+}
+
+.wave-3 {
+    width: 200%;
+    height: 200%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.content {
+    position: absolute;
+    bottom: 33%;
+    right: 25%;
+    width: 30%;
+}
+
+.content h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    line-height: 0.85;
+    text-align: right;
+}
+
+.content h2 {
+    font-size: 1.1rem;
+    color: #5f5f5f;
+    letter-spacing: 2.2px;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.content h5 {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 50%;
+    margin: 10px 50%;
+}
+
+.content p {
+    width: 50%;
+    margin: 0 50%;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.water-container {
+    width: 200px;
+    height: 300px;
+    border: 5px solid #666;
+    border-top: transparent;
+    border-radius: 10px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    position: absolute;
+    bottom: 33%;
+    right: 10%;
+    overflow: hidden;
+}
+
+.water-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 40%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(#0073ffb4, #21aeffb4);
+    animation: fill-before 5s ease-in-out infinite;
+}
+
+.water-container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(#0073ffb4, #21aeffb4);
+    animation: fill-after 5s ease-in-out infinite;
+}
+
+@keyframes fill-before {
+    0% {
+        top: 350px;
+        transform: translate(-50%) rotate(0deg);
+    }
+
+    100% {
+        top: 20px;
+        transform: translate(-50%) rotate(380deg);
+    }
+}
+
+@keyframes fill-after {
+    0% {
+        top: 350px;
+        transform: translate(-50%) rotate(40deg);
+    }
+
+    100% {
+        top: 20px;
+        transform: translate(-50%) rotate(270deg);
+    }
+}
