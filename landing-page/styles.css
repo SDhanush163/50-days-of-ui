@@ -291,7 +291,7 @@ header .links li a:hover {
 }
 
 .container .section.order .main-div {
-    padding-top: 8rem;
+    padding-top: 10rem;
 }
 
 .container .section.order .product-desc h1 {
@@ -438,6 +438,35 @@ header .links li a:hover {
     position: absolute;
     bottom: -4rem;
     right: 0;
+}
+
+footer {
+    display: flex;
+    padding: 1rem 10rem;
+    justify-content: space-between;
+    background: var(--charcoal-black);
+    color: var(--white-smoke);
+}
+
+footer .heart {
+    color: red;
+    -webkit-text-stroke: 1px black;
+}
+
+footer p a {
+    color: var(--pastel-blue);
+}
+
+footer .socials a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer .socials a i {
+    border: 1px solid var(--white-smoke);
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 @media (max-width: 1600px) {
